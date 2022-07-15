@@ -1,0 +1,40 @@
+digraph {
+	subgraph cluster44 {
+		delta [label="delta
+~
+Lognormal"]
+		label=44 labeljust=r labelloc=b style=rounded
+	}
+	subgraph cluster134 {
+		psi [label="psi
+~
+Normal"]
+		label=134 labeljust=r labelloc=b style=rounded
+	}
+	ksigma [label="ksigma
+~
+HalfNormal"]
+	subgraph cluster4 {
+		kmu [label="kmu
+~
+Normal"]
+		label=4 labeljust=r labelloc=b style=rounded
+	}
+	subgraph "cluster44 x 4" {
+		kappa [label="kappa
+~
+Normal"]
+		label="44 x 4" labeljust=r labelloc=b style=rounded
+	}
+	subgraph "cluster5,896" {
+		y [label="y
+~
+OrderedLogistic" style=filled]
+		label="5,896" labeljust=r labelloc=b style=rounded
+	}
+	kmu -> kappa
+	ksigma -> kappa
+	psi -> y
+	delta -> y
+	kappa -> y
+}
